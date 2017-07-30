@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+set -eEuo pipefail
+
+update_rcfiles () {
+  declare rcfiles="$(eval echo "$1")"
+  declare hometgt="$(eval echo "$2")"
+  declare lname="${1#~/}"
+
+  git -C $rcfiles pull --tags
+  git -C $rcfiles submodule update --init --recursive
+  git -C $rcfiles submodule status \
+    | awk '{print $2}' \
+    | xargs -P5 -n1 -I{} git -C "${rcfiles%%/}/{}" pull --tags origin master
+
+  $rcfiles/bin/dotfiles-symlink-files "$rcfiles" "$hometgt"
+  find ~ -maxdepth 3 -xdev -lname "*/${lname%%}/*" ! -execdir test -e '{}' \; -print -delete
+}
+
+main () {
+  if [[ -t 1 ]]; then
+    update_rcfiles '~/src/rcfiles' '~'
+  fi
+}
+
+main "$@"
+
