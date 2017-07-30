@@ -5,7 +5,7 @@ set -eEuo pipefail
 update_rcfiles () {
   declare rcfiles="$(eval echo "$1")"
   declare hometgt="$(eval echo "$2")"
-  declare lname="${1#~/}"
+  declare lname="${1#$HOME}"; lname="${lname#~}"
 
   # Update dotfiles.sh from upstream source.
   #curl -sSLo "$rcfiles/bin/dotfiles.sh" \
@@ -28,7 +28,11 @@ update_rcfiles () {
 
 main () {
   if [[ -t 1 ]]; then
-    update_rcfiles '~/src/rcfiles' '~'
+    declare rcfiles="${1:-}" # arg1 = location of rcfiles repository
+    declare hometgt="${2:-}" # arg2 = location of base dir to symlink files
+    [[ -n "$rcfiles" ]] || rcfiles="${DOTFILES_SYMLINK_SOURCE:-~/src/rcfiles}"
+    [[ -n "$hometgt" ]] || hometgt="${DOTFILES_SYMLINK_TARGET:-~}"
+    update_rcfiles "$rcfiles" "$hometgt"
   fi
 }
 
