@@ -11,7 +11,7 @@ purely optional example files indented to demonstrate one possible use case.
 ## Installation
 
   1. First, fork this repository to your own GitHub account, or your preferred
-     Git hosting solution (GitLab, PasteBin, Gogs etc).
+     Git hosting solution (GitLab, BitBucket, Gogs etc).
 
   2. Optionally (reccomended), set the repository to be private.
 
