@@ -63,7 +63,7 @@ if [[ ${BASH_VERSINFO[1]} -ge 4 ]] ; then
     done < <(upower -i "$__UPOWER_BATTERY")
 
     # Set the new prompt.
-    __UPOWER_PROMPT="${__upower[state]:-}"
+    __UPOWER_PROMPT="[${__upower[state]:-}]"
     if [[    "${__upower[state]:-}" == "discharging" \
        && -n "${__upower[percentage]:-}" \
        && -n "${__upower[time-to-empty]:-}" ]] ; then
