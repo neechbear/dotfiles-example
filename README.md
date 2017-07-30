@@ -23,7 +23,7 @@ git clone https://github.com/$YOUR_USERNAME/dotfiles-example.git ~/src/rcfiles
 ~/src/rcfiles/bin/dotfiles-symlink-files ~/src/rcfiles ~
 ```
 
-  4. If clone the repository in to a different location, you should modify
+  4. If you clone the repository in to a different location, you should modify
      either (or both) `bin/rcup`, `.profile.d/010-environment-common.sh` files
      to reflect the new path.
 
