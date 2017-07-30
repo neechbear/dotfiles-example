@@ -1,11 +1,14 @@
 
-if [ -n "$HOME" ] && [ -d "$HOME" ] && [ -z "$DOTFILES_SYMLINK_SOURCE" ] ; then
-  if [ -x "$HOME/src/rcfiles/bin/dotfiles.sh" ] ; then
-    DOTFILES_SYMLINK_SOURCE="$HOME/src/rcfiles"
-  fi
-  export DOTFILES_SYMLINK_SOURCE
-  export DOTFILES_SYMLINK_TARGET="$HOME"
-fi
+# Setting environment variables DOTFILES_SYMLINK_SOURCE and
+# DOTFILES_SYMLINK_TARGET will provide default values for the
+# dotfiles-symlink-files command.
+#if [ -n "$HOME" ] && [ -d "$HOME" ] && [ -z "$DOTFILES_SYMLINK_SOURCE" ] ; then
+#  if [ -x "$HOME/src/rcfiles/bin/dotfiles.sh" ] ; then
+#    DOTFILES_SYMLINK_SOURCE="$HOME/src/rcfiles"
+#  fi
+#  export DOTFILES_SYMLINK_SOURCE
+#  export DOTFILES_SYMLINK_TARGET="$HOME"
+#fi
 
 if [ -z "$USER" ] && [ -z "$LOGNAME" ] && [ -x /usr/bin/id ] ; then
   export USER="$(id -un)"
