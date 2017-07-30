@@ -3,6 +3,10 @@
 Example use of dotfiles https://github.com/neechbear/dotfiles.git project to
 selectively symlink files into your home directory.
 
+Only the `bin/dotfiles.sh` contains the actual `dotfiles` software (as sourced
+from https://github.com/neechbear/dotfiles). All other files in this project are
+purely optional example files indented to demonstrate one possible use case.
+
 
 ## Installation
 
