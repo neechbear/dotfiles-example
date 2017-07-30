@@ -70,7 +70,7 @@ if [[ ${BASH_VERSINFO[1]} -ge 4 ]] ; then
       __UPOWER_PROMPT="$(__upower_prompt_colour \
                       "${__upower[percentage]:-}" \
                       "${__upower[time-to-empty]}" \
-                      "%s/%s")"
+                      "[%s/%s]")"
     fi
 
     # Save state.

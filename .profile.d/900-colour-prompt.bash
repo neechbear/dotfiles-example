@@ -14,7 +14,7 @@ if [[ "$-" = *"i"* ]] ; then
   fi
 
   if [ -n "$COLOUR_TERMINAL" ] ; then
-    PS1="\[\e[0;32m]\u\[\e[1m\]@\[\e[0;32m\]\h\[\e[0m\]"$'$(__upower_prompt)'":\w"
+    PS1="\[\e[0;32m\]\u\[\e[1m\]@\[\e[0;32m\]\h\[\e[0m\]"$'$(__upower_prompt)'":\w"
 
     # oh-my-git
     __ohmygit=1
