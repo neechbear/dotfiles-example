@@ -25,6 +25,11 @@ git clone https://github.com/$YOUR_USERNAME/dotfiles-example.git ~/src/rcfiles
 
 ## Usage
      
+Simply add and commit files to your Git repository, which will be symlinked in
+to your target directory for you. (In this example, symlinks will be placed into
+your home directory, pointing to the rcfiles and scripts located under
+`~/src/rcfiles`).
+
 Running the `bin/rcup` command will pull any updates from your upstream origin
 Git repository, and then run `bin/dotfiles-symlink-files` for you. It is used
 in combination with the `.profile.d/999-rcup.bash` profile script, which will
