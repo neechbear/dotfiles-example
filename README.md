@@ -1,6 +1,6 @@
 # dotfiles-example
 
-Example use of dotfiles phttps://github.com/neechbear/dotfiles.git project to
+Example use of dotfiles https://github.com/neechbear/dotfiles.git project to
 selectively symlink files into your home directory.
 
 

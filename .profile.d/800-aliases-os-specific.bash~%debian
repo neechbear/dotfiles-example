@@ -1,0 +1,10 @@
+
+if apt-get --help 2>&1 | grep -q full-upgrade ; then
+  alias aptug="sudo apt-get -qq -y update ; sudo apt-get -qq -y full-upgrade && sudo apt-get autoremove"
+else
+  alias aptug="sudo apt-get -qq -y update ; sudo apt-get -qq -y upgrade && sudo apt-get autoremove"
+fi
+
+alias apt-pkgs="comm -23 <(apt-mark showmanual | sort -u) <(gzip -dc /var/log/installer/initial-status.gz | sed -n 's/^Package: //p' | sort -u)"
+alias changelog="xargs -I% -- zless /usr/share/doc/%/changelog.Debian.gz <<<"
+
