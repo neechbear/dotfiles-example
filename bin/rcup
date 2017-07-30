@@ -7,14 +7,23 @@ update_rcfiles () {
   declare hometgt="$(eval echo "$2")"
   declare lname="${1#~/}"
 
+  # Update dotfiles.sh from upstream source.
+  #curl -sSLo "$rcfiles/bin/dotfiles.sh" \
+  #  https://raw.githubusercontent.com/neechbear/dotfiles/master/bin/dotfiles.sh
+
+  # Update rcfiles from repository.
   git -C $rcfiles pull --tags
   git -C $rcfiles submodule update --init --recursive
   git -C $rcfiles submodule status \
     | awk '{print $2}' \
     | xargs -P5 -n1 -I{} git -C "${rcfiles%%/}/{}" pull --tags origin master
 
-  $rcfiles/bin/dotfiles-symlink-files "$rcfiles" "$hometgt"
-  find ~ -maxdepth 3 -xdev -lname "*/${lname%%}/*" ! -execdir test -e '{}' \; -print -delete
+  # Create symlinks.
+  "$rcfiles/bin/dotfiles-symlink-files" "$rcfiles" "$hometgt"
+
+  # Remove any old broken symlinks.
+  find "$hometgt" -maxdepth 3 -xdev -lname "*/${lname%%}/*" \
+    ! -execdir test -e '{}' \; -print -delete
 }
 
 main () {
