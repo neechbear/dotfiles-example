@@ -4,6 +4,21 @@ Example use of dotfiles https://github.com/neechbear/dotfiles.git project to
 selectively symlink files into your home directory.
 
 
+## Installation
+
+  1. First, fork this repository to your own GitHub account.
+
+  2. Optionally (reccomended), set the repository to be private.
+
+  3. Clone your forked repository, and then run the installation.
+
+```bash
+git clone https://github.com/$YOUR_USERNAME/dotfiles-example.git ~/src/rcfiles
+~/src/rcfiles/bin/dotfiles.sh install
+~/src/rcfiles/bin/dotfiles-symlink-files ~/src/rcfiles ~
+```
+
+
 ## YouTube Video Demonstration
 
 TODO: Embed video here.
