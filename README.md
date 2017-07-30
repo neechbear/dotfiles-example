@@ -21,12 +21,21 @@ git clone https://github.com/$YOUR_USERNAME/dotfiles-example.git ~/src/rcfiles
   4. If clone the repository in to a different location, you should modify
      either (or both) `bin/rcup`, `.profile.d/010-environment-common.sh` files
      to reflect the new path.
+
+
+## Usage
      
-  5. Running the `bin/rcup` command will pull any updates from your upstream
-     origin Git repository, and then run `bin/dotfiles-symlink-files` for you.
-     It is used in combination with the `.profile.d/999-rcup.bash` profile
-     script, which will periodically run the `bin/rcup` command for you upon
-     login, to ensure that your rcfiles are always kept up-to-date.
+Running the `bin/rcup` command will pull any updates from your upstream origin
+Git repository, and then run `bin/dotfiles-symlink-files` for you. It is used
+in combination with the `.profile.d/999-rcup.bash` profile script, which will
+periodically run the `bin/rcup` command for you upon login, to ensure that your
+rcfiles are always kept up-to-date.
+
+See the other symlinked commands in `bin`, and example files in this repository
+for further guidance.
+
+More examples can be found at https://github.com/neechbear/dotfiles
+[README.md](https://github.com/neechbear/dotfiles/blob/master/README.md).
 
 
 ## YouTube Video Demonstration
