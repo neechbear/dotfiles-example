@@ -10,15 +10,32 @@ purely optional example files indented to demonstrate one possible use case.
 
 ## Installation
 
-  1. First, fork this repository to your own GitHub account, or your preferred
-     Git hosting solution (GitLab, BitBucket, Gogs etc).
+  1. Create a new repository named `rcfiles` on your preferred Git hosting
+     solution. A private repository is reccomended if you plan to customise
+     your rcfiles with any sensitive data.
 
-  2. Optionally (reccomended), set the repository to be private.
-
-  3. Clone your forked repository, and then run the installation.
+  2. Download the `dotfiles-example` files.
 
 ```bash
-git clone https://github.com/$YOUR_USERNAME/dotfiles-example.git ~/src/rcfiles
+mkdir -p ~/src/rcfiles
+cd ~/src/rcfiles
+curl -sSL https://github.com/neechbear/dotfiles-example/archive/master.tar.gz | tar -zxvf - --strip=1
+```
+
+  3. Add the files to your new `rcfiles` Git repository.
+
+```bash
+cd ~/src/rcfiles
+git add -A .
+git commit -a -m 'Initial import from dotfiles-example'
+git remote add origin ssh://git@github.com/$YOUR_USERNAME/rcfiles.git
+git push -u origin master
+```
+
+  4. Run the installation command, and create the symlinks into your home
+     directory.
+
+```bash
 ~/src/rcfiles/bin/dotfiles.sh install
 ~/src/rcfiles/bin/dotfiles-symlink-files ~/src/rcfiles ~
 ```
