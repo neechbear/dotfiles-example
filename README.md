@@ -17,27 +17,27 @@ purely optional example files indented to demonstrate one possible use case.
   2. Download the `dotfiles-example` files.
 
 ```bash
-mkdir -p ~/src/rcfiles
-cd ~/src/rcfiles
-curl -sSL https://github.com/neechbear/dotfiles-example/archive/master.tar.gz | tar -zxvf - --strip=1
+$ mkdir -p ~/src/rcfiles
+$ cd ~/src/rcfiles
+$ curl -sSL https://github.com/neechbear/dotfiles-example/archive/master.tar.gz | tar -zxvf - --strip=1
 ```
 
   3. Add the files to your new `rcfiles` Git repository.
 
 ```bash
-cd ~/src/rcfiles
-git add -A .
-git commit -a -m 'Initial import from dotfiles-example'
-git remote add origin ssh://git@github.com/$YOUR_USERNAME/rcfiles.git
-git push -u origin master
+$ cd ~/src/rcfiles
+$ git add -A .
+$ git commit -a -m 'Initial import from dotfiles-example'
+$ git remote add origin ssh://git@github.com/$YOUR_USERNAME/rcfiles.git
+$ git push -u origin master
 ```
 
   4. Run the installation command, and create the symlinks into your home
      directory.
 
 ```bash
-~/src/rcfiles/bin/dotfiles.sh install
-~/src/rcfiles/bin/dotfiles-symlink-files ~/src/rcfiles ~
+$ ~/src/rcfiles/bin/dotfiles.sh install
+$ ~/src/rcfiles/bin/dotfiles-symlink-files ~/src/rcfiles ~
 ```
 
   4. If you clone the repository in to a different location, you should modify
