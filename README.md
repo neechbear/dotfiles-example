@@ -40,7 +40,7 @@ $ ~/src/rcfiles/bin/dotfiles.sh install
 $ ~/src/rcfiles/bin/dotfiles-symlink-files ~/src/rcfiles ~
 ```
 
-  4. If you clone the repository in to a different location, you should modify
+  5. If you clone the repository in to a different location, you should modify
      either (or both) `bin/rcup`, `.profile.d/010-environment-common.sh` files
      to reflect the new path.
 
