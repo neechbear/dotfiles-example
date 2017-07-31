@@ -28,7 +28,7 @@ $ curl -sSL https://github.com/neechbear/dotfiles-example/archive/master.tar.gz 
 $ cd ~/src/rcfiles
 $ git add -A .
 $ git commit -a -m 'Initial import from dotfiles-example'
-$ git remote add origin ssh://git@github.com/$YOUR_USERNAME/rcfiles.git
+$ git remote add origin ssh://git@github.com/$YOUR_GITHUB_USERNAME/rcfiles.git
 $ git push -u origin master
 ```
 
