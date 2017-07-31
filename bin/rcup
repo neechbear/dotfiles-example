@@ -13,6 +13,7 @@ update_rcfiles () {
 
   # Update rcfiles from repository.
   git -C $rcfiles pull --tags
+  #git -C $rcfiles submodule deinit --force --all
   git -C $rcfiles submodule update --init --recursive
   git -C $rcfiles submodule status \
     | awk '{print $2}' \
