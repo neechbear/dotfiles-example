@@ -11,7 +11,7 @@ purely optional example files indented to demonstrate one possible use case.
 ## Installation
 
   1. Create a new repository named `rcfiles` on your preferred Git hosting
-     solution. A private repository is reccomended if you plan to customise
+     solution. A private repository is recommended if you plan to customise
      your rcfiles with any sensitive data.
 
   2. Download the `dotfiles-example` files.
